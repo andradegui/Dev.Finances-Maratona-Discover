@@ -131,7 +131,7 @@ const DOM = {
 const Utils = {
 
      formatAmount(value) {
-        value = Number(value) * 100
+        value = Number(value.replace(/\,\./g, "")) * 100
 
         return value
      },
@@ -144,7 +144,7 @@ const Utils = {
     formatCurrency(value) {
         const signal = Number(value) < 0 ? "-" : ""
 
-        value = String(value).replace(/\D/g, "")
+        value = String(value).replace(/\D/g, "")   
 
         value = Number(value) / 100
 
